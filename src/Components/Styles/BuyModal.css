@@ -10,7 +10,7 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  padding: 2rem; /* 👈 Adds spacing around modal */
+  padding: 2rem;
 }
 
 .slide-modal {
@@ -113,7 +113,7 @@
 }
 
 .count-btn.plus {
-  color: #ff3c6f; /* pink color */
+  color: #ff3c6f; 
   border-left: 1px solid #ddd;
 }
 

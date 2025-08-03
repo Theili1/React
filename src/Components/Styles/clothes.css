@@ -3,14 +3,9 @@
   padding: 2rem;
 }
 
-.clothing-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 1.5rem;
-}
-
 /* Product card */
 .clothing-card {
+  margin: 20px;
   position: relative;
   background: white;
   border-radius: 0.75rem;
@@ -19,7 +14,7 @@
   transition: transform 0.2s ease;
 }
 
-/* Image & hover buttons */
+
 .image-container {
   position: relative;
   width: 100%;
@@ -42,14 +37,14 @@
   transition: opacity 0.3s ease;
 }
 
-/* Default hover: no dark overlay */
+
 .image-container:hover::after {
   opacity: 1;
 }
 
 /* When product is in cart, hover adds green overlay instead */
 .image-container.in-cart::after {
-  background: rgba(0, 128, 0, 0.4); /* semi-transparent green */
+  background: rgba(0, 128, 0, 0.4);
   opacity: 0;
 }
 
@@ -64,7 +59,7 @@
   object-fit: contain;
 }
 
-/* Heart button */
+
 .favorite-btn {
   position: absolute;
   top: 10px;
@@ -86,7 +81,7 @@
   border: none;
 }
 
-/* Shop button (hover) */
+
 .shop-btn {
   position: absolute;
   margin: 120px;
@@ -111,7 +106,7 @@
   transform: translateY(0);
 }
 
-/* Card content */
+
 .card-info {
   padding: 1rem;
   display: flex;
@@ -145,7 +140,7 @@
   color: #333;
 }
 
-/* Rating stars */
+
 .product-rating {
   display: flex;
   justify-content: flex-start;

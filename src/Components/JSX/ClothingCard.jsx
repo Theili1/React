@@ -1,5 +1,6 @@
 import { FaRegHeart, FaShoppingCart, FaCheck, FaTrash } from 'react-icons/fa';
 import RatingStars from './RatingStars';
+import '../Styles/clothes.css'
 
 function ClothingCard({ 
   product, 
