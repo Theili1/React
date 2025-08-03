@@ -1,0 +1,60 @@
+.logoImg {
+  width: 42px;
+  height: 40px;
+  margin-left: 2.5%;
+}
+
+.shopName {
+    color: orange;
+    font-size: 32px;
+    font-weight: 500;
+    top: 10%;
+    cursor:default;
+}
+
+.shopColor {
+  color: deeppink;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.logo-name {
+  display: flex;
+  align-items: center; 
+  gap: 20px; /* space between image and text */
+  margin-left: 10px;
+  margin-bottom: 300px;
+  margin-top: 50px;
+}
+
+.headBtn {
+  border: none;
+  background-color:inherit;
+  margin: 10px;
+  font-size: 14px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.headBtn:hover {
+  color: orange;
+}
+
+.mainBtn {
+  justify-content: flex-end;
+  display: flex;
+  gap: 20px;
+  margin-left: 220px;
+  margin-top: 14px;
+}
+
+.Btn {
+  border:none;
+  background-color: inherit;
+  padding:15px;
+  cursor: pointer;
+}
+
+.Btn:hover {
+  color: orange;
+}

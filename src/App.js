@@ -1,23 +1,85 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+
+import FooterStatus from './Components/JSX/Footer';
+
+import ClothingGrid from './Components/JSX/ClothingGrid';
+import Header from './Components/JSX/Header';
+import TopSite from './Components/JSX/TopSite';
+import ProductModal from './Components/JSX/ProductModal';
+import CartModal from './Components/JSX/CartModal';
+
+
+
 
 function App() {
+
+  const handleRemoveFromCart = (productId) => {
+  setCartItems(prevItems => prevItems.filter(item => item.id !== productId));
+};
+
+
+  
+  const [cartItems, setCartItems] = useState([]);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  // Add to cart logic
+  const handleAddToCart = (product, count) => {
+    setCartItems((prevItems) => {
+      const existingItem = prevItems.find(
+        (item) => item.id === product.id && item.size === product.size
+      );
+      if (existingItem) {
+        return prevItems.map((item) =>
+          item.id === product.id && item.size === product.size
+            ? { ...item, count: item.count + count }
+            : item
+        );
+      } else {
+        return [...prevItems, { ...product, count }];
+      }
+    });
+    setSelectedProduct(null); // Close modal after adding
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+
+      <div className="backGround">
+        <TopSite cartItems={cartItems} openCartModal={() => setIsCartOpen(true)} />
+
+        <ClothingGrid
+  addToCart={handleAddToCart}
+  cartItems={cartItems}
+  removeFromCart={handleRemoveFromCart}
+/>
+
+
+      </div>
+
+      {/* Product modal when a product is selected */}
+      {selectedProduct && (
+        <ProductModal
+          product={selectedProduct}
+          onClose={() => setSelectedProduct(null)}
+          addToCart={handleAddToCart}
+        />
+      )}
+
+      {/* Cart modal */}
+      <CartModal
+        isOpen={isCartOpen}
+        onClose={() => setIsCartOpen(false)}
+        cartItems={cartItems}
+      />
+
+      <FooterStatus
+  cartCount={cartItems.reduce((total, item) => total + item.count, 0)}
+      />
+
+
     </div>
   );
 }
