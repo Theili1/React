@@ -113,7 +113,7 @@
 }
 
 .count-btn.plus {
-  color: #ff3c6f; 
+  color: #ff3c6f; /* pink color */
   border-left: 1px solid #ddd;
 }
 
@@ -205,6 +205,4 @@
   margin-top: 7px;
   margin-left: 100px;
   opacity: 0.7;
-
 }
-

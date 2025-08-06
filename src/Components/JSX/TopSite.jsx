@@ -30,10 +30,10 @@ const TopSite = ({ cartItems }) => {
         </button>
       </div>
 
-      {/* orange banner */}
+      
       <Banner />
 
-      {/* 🛒 Cart Modal with cartItems passed as prop */}
+      
       <CartModal
         isOpen={isModalOpen}
         onClose={() => setModalOpen(false)}

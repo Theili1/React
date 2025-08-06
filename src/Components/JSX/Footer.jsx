@@ -9,7 +9,7 @@ const FooterStatus = ({ cartCount, favoritesCount }) => {
       <p className="spans">{cartCount} Items added to cart</p>
 
       <FaRegHeart className="heart-icon" />
-      <p className="spans">{favoritesCount} Wish list</p>
+      <span className="spans">{favoritesCount} Wish list</span>
     </div>
   );
 };
