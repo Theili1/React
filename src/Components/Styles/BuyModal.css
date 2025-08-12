@@ -1,18 +1,20 @@
+/* Overlay background for modal (dark transparent layer behind modal) */
 .modalOverLay {
-  position: fixed;
+  position: fixed; /* Stays in place while scrolling */
   top: 0;
   left: 0;
   box-sizing: border-box;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.2); /* Semi-transparent black background */
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 1000; /* Appears on top of most elements */
   padding: 2rem;
 }
 
+/* Slide-in modal container (right side panel) */
 .slide-modal {
   position: fixed;
   top: 15px;
@@ -21,12 +23,13 @@
   border-radius: 20px;
   width: 350px;
   background: #fff;
-  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow on left side */
   padding: 2rem;
   z-index: 1000;
-  animation: slideIn 0.3s ease forwards;
+  animation: slideIn 0.3s ease forwards; /* Slide-in animation */
 }
 
+/* Slide-in animation effect from the right */
 @keyframes slideIn {
   from {
     transform: translateX(100%);
@@ -36,6 +39,7 @@
   }
 }
 
+/* Close button inside modal */
 .close-btn {
   position: absolute;
   top: 1rem;
@@ -46,12 +50,14 @@
   cursor: pointer;
 }
 
+/* Product info section in modal */
 .buyProductInfo {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
+/* Product image styling */
 .buyImg {
   width: 200px;
   height: 190px;
@@ -59,9 +65,10 @@
   align-content: flex-start;
 }
 
+/* Title and price container */
 .titleAndPrice {
   margin-top: 20px;
-  margin-right:100px;
+  margin-right: 100px;
   padding-right: 50px;
   left: 0;
   display: flex;
@@ -69,15 +76,18 @@
   gap: 50px;
 }
 
+/* Product title text */
 .buyTitle {
   font-size: 14px;
   font-weight: 500;
 }
 
+/* Product price text */
 .buyPrice {
- font-weight: 500;
+  font-weight: 500;
 }
 
+/* Product description text */
 .buyDetail {
   font-size: 0.85rem;
   color: #666;
@@ -85,8 +95,9 @@
   display: flex;
 }
 
+/* Quantity counter container */
 .addCount {
-    margin-top: 20px;
+  margin-top: 20px;
   display: flex;
   align-items: center;
   border: 1px solid #ddd;
@@ -95,6 +106,7 @@
   width: fit-content;
 }
 
+/* Quantity button (plus/minus) */
 .count-btn {
   background: transparent;
   border: none;
@@ -107,21 +119,25 @@
   transition: all 0.2s ease;
 }
 
+/* Minus button specific style */
 .count-btn.minus {
   color: #888;
   border-right: 1px solid #ddd;
 }
 
+/* Plus button specific style */
 .count-btn.plus {
-  color: #ff3c6f; /* pink color */
+  color: #ff3c6f; /* Pink color */
   border-left: 1px solid #ddd;
 }
 
+/* Disabled quantity buttons */
 .count-btn:disabled {
   opacity: 0.3;
   cursor: not-allowed;
 }
 
+/* Number display for product quantity */
 .count-display {
   padding: 0 15px;
   font-size: 16px;
@@ -129,12 +145,14 @@
   color: #444;
 }
 
+/* Product sizes container */
 .sizes {
-    margin-top: 20px;
-    display: flex;
-    align-items: flex-start;
+  margin-top: 20px;
+  display: flex;
+  align-items: flex-start;
 }
 
+/* Individual size button */
 .sizeBtn {
   padding: 8px 12px;
   margin: 4px;
@@ -146,12 +164,14 @@
   border-radius: 7px;
 }
 
+/* Active/selected size button */
 .activeSize {
   background-color: orange;
   color: white;
   border-color: orange;
 }
 
+/* Delivery info section */
 .priTruck {
   font-size: 14px;
   margin-top: 20px;
@@ -160,38 +180,44 @@
   gap: 8px;
 }
 
+/* Delivery truck icon */
 .priTruck img {
   width: 20px;
   height: 18px;
   margin-right: 10px;
 }
 
+/* Additional small text under delivery info */
 .underWrite {
   font-size: 10px;
   display: flex;
   opacity: 0.5;
 }
 
+/* Add to cart section */
 .addToCart {
   display: flex;
   margin-top: 15px;
   gap: 10px;
 }
 
+/* Add to cart button */
 .addBtn {
   padding: 10px 20px;
   border-radius: 15px;
   color: orange;
   border-color: orange;
-  border-style:solid;
+  border-style: solid;
   background-color: transparent;
   cursor: pointer;
 }
 
+/* Hover effect for add button */
 .addBtn:hover {
   background-color: #ddd;
 }
 
+/* Cancel button (small, faded) */
 .cancBtn {
   border: none;
   background-color: transparent;
@@ -200,6 +226,7 @@
   cursor: pointer;
 }
 
+/* Summary price text */
 .sumPrice {
   flex-direction: column;
   margin-top: 7px;

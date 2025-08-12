@@ -1,6 +1,7 @@
 *{
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 .backGround{
@@ -12,8 +13,3 @@
   padding-top: 25px;
   
 }
-
-
-
-
-

@@ -1,57 +1,62 @@
+/* Advertisement group container */
 .adGroup {
-  position: absolute;
-  background-color: #FE8A00;
-  right:2;
-  left: 11%;
-  width: 67%;
-  height: 35%;
-  margin-top: 23%;
-  padding-right: 170px;
-  border-radius: 2px;
-  
+  position: absolute;          /* Positioned relative to nearest positioned ancestor */
+  background-color: #FE8A00;   /* Orange background */
+  right: 2;                    /* (Likely missing 'px', should be '2px') */
+  left: 11%;                   /* 11% from the left side */
+  width: 67%;                   /* Covers about two-thirds of the container's width */
+  height: 35%;                  /* Takes up 35% of container's height */
+  margin-top: 23%;              /* Pushes down from the top */
+  padding-right: 170px;         /* Space inside on the right side */
+  border-radius: 2px;           /* Slightly rounded corners */
 }
 
- .adGroup p {
+/* Advertisement text inside adGroup */
+.adGroup p {
   font-size: 28px;
-  font-weight: 600;
+  font-weight: 600;             /* Semi-bold text */
   margin-top: 60px;
   margin-left: 18%;
-  color: white;
+  color: white;                 /* White text color */
 }
 
+/* Call-to-action button inside adGroup */
 .adBtn {
-  border: none;
-  padding: 6px 20px;
-  background-color: white;
-  color: deeppink;
-  border-radius: 20px;
-  margin-left: 21% ;
+  border: none;                 /* No border */
+  padding: 6px 20px;             /* Inner spacing for clickable area */
+  background-color: white;      /* White button background */
+  color: deeppink;              /* Pink text */
+  border-radius: 20px;          /* Fully rounded edges */
+  margin-left: 21%;
   margin-top: 20px;
   font-size: 14px;
-  cursor: pointer;
-  
+  cursor: pointer;              /* Pointer cursor on hover */
 }
 
+/* Icon container inside adGroup (decorative) */
 .icons {
-  position: absolute;
+  position: absolute;           /* Positioned relative to adGroup */
   display: block;
   width: 75%;
   height: 100%;
-  margin-left:140px;
-  pointer-events: none;
-
+  margin-left: 140px;
+  pointer-events: none;         /* Clicks pass through (non-interactive) */
 }
 
+/* Kid image 1 (likely on the right side) */
 .kidPic1 {
-  position: inherit;
+  position: inherit;            /* Inherits positioning from parent */
   width: 170px;
-  top:0; right:0;
-  height: auto;
+  top: 0; 
+  right: 0;
+  height: auto;                  /* Keep image proportions */
 }
 
+/* Kid image 2 (flipped horizontally on the left side) */
 .kidPic2 {
   position: absolute;
-  top:0; left:0;
-  transform: scaleX(-1);
-  width:170px ;
+  top: 0; 
+  left: 0;
+  transform: scaleX(-1);        /* Flips image horizontally */
+  width: 170px;
 }

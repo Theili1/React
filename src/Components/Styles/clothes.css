@@ -1,18 +1,20 @@
+/* === Container for all clothing section content === */
 .clothing-section {
   padding: 2rem;
 }
 
-
+/* === Main card for each clothing item === */
 .clothing-card {
   position: relative;
   background: white;
   border-radius: 0.75rem;
   overflow: hidden;
   margin: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* soft shadow */
+  transition: transform 0.2s ease; /* smooth hover scaling */
 }
 
+/* === Product image container === */
 .image-container {
   position: relative;
   width: 100%;
@@ -24,8 +26,7 @@
   overflow: hidden;
 }
 
-
-/* Remove the old dark overlay on hover */
+/* Dark overlay effect for hover (disabled by default) */
 .image-container::after {
   content: "";
   position: absolute;
@@ -35,29 +36,30 @@
   transition: opacity 0.3s ease;
 }
 
-/* Default hover: no dark overlay */
+/* Show dark overlay on hover */
 .image-container:hover::after {
   opacity: 1;
 }
 
-/* When product is in cart, hover adds green overlay instead */
+/* When product is in cart: green overlay instead of dark */
 .image-container.in-cart::after {
   background: rgba(0, 128, 0, 0.4);
   opacity: 0;
 }
 
+/* Show green overlay when hovering over in-cart product */
 .image-container.in-cart:hover::after {
   opacity: 1;
 }
 
-
+/* Product image sizing */
 .product-img {
   max-height: 100%;
   max-width: 100%;
-  object-fit: contain;
+  object-fit: contain; /* keep proportions */
 }
 
-
+/* Favorite (heart/trash) button styling */
 .favorite-btn {
   position: absolute;
   top: 10px;
@@ -65,20 +67,23 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  z-index: 2;
+  z-index: 2; /* stay above overlay */
 }
 
+/* Heart/trash icon base style */
 .heart-icon {
   font-size: 20px;
   color: #ccc;
   transition: color 0.3s, border 0.3s;
 }
 
+/* Active (favorite) heart style */
 .heart-icon.active {
-  color: #ec4899;
+  color: #ec4899; /* pink */
   border: none;
 }
 
+/* Shopping cart / checkmark button styling */
 .shop-btn {
   position: absolute;
   margin: 120px;
@@ -91,18 +96,20 @@
   border: none;
   padding: 8px;
   border-radius: 50%;
-  opacity: 0;
+  opacity: 0; /* hidden until hover */
   transform: translateY(10px);
   transition: all 0.3s ease;
   cursor: pointer;
   z-index: 2;
 }
 
+/* Show shop button on image hover */
 .image-container:hover .shop-btn {
   opacity: 1;
   transform: translateY(0);
 }
 
+/* === Card information (title, price, rating) === */
 .card-info {
   padding: 1rem;
   display: flex;
@@ -111,12 +118,14 @@
   height: 100px;
 }
 
+/* Top section: title + price */
 .info-top {
   display: flex;
   justify-content: space-between;
   align-items: start;
 }
 
+/* Product title style */
 .product-title {
   gap: 30px;
   font-size: 14px;
@@ -125,17 +134,20 @@
   margin-right: 30px;
 }
 
+/* Product detail text */
 .product-detail {
   font-size: 0.85rem;
   color: #666;
 }
 
+/* Price styling */
 .product-price {
   font-size: 14px;
   font-weight: bold;
   color: #333;
 }
 
+/* Rating stars container */
 .product-rating {
   display: flex;
   justify-content: flex-start;
@@ -143,12 +155,14 @@
   margin-top: 15px;
 }
 
+/* Star style */
 .star {
   color: orange;
   margin-right: 3px;
   font-size: 1rem;
 }
 
+/* Inactive (empty) star style */
 .star.inactive {
   color: #ddd;
 }

@@ -10,7 +10,7 @@ const Banner = () => {
               
               <img src={icon} alt='icons' className='icons'></img>
               <p>Get 50% Off on <br></br>Selected categories</p>
-              <button className='adBtn'>Shop Now</button>
+              <button className='adBtn' href='#scroll'>Shop Now</button>
               <img src={kid1} className='kidPic1' alt='kidPicture'></img>
               <img src={kid2} className='kidPic2' alt='kidPicture'></img>
                

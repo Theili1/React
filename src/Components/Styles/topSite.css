@@ -1,35 +1,40 @@
+/* Logo image style: fixed size and slight left margin */
 .logoImg {
   width: 42px;
   height: 40px;
   margin-left: 2.5%;
 }
 
+/* Main shop name style: orange color, medium-bold, larger text, and fixed position offset */
 .shopName {
-    color: orange;
-    font-size: 32px;
-    font-weight: 500;
-    top: 10%;
-    cursor:default;
+  color: orange;
+  font-size: 32px;
+  font-weight: 500;
+  top: 10%;
+  cursor: default; /* Prevents text from being selectable as a link */
 }
 
+/* Accent color for part of the shop name */
 .shopColor {
   color: deeppink;
   font-size: 32px;
   font-weight: 500;
 }
 
+/* Wrapper for logo image and shop name side-by-side */
 .logo-name {
   display: flex;
-  align-items: center; 
-  gap: 20px; /* space between image and text */
+  align-items: center; /* Vertically centers items */
+  gap: 20px; /* Space between logo and name */
   margin-left: 10px;
-  margin-bottom: 300px;
+  margin-bottom: 300px; /* Large bottom space */
   margin-top: 50px;
 }
 
+/* Header button style: minimal design, hover changes text color */
 .headBtn {
   border: none;
-  background-color:inherit;
+  background-color: inherit;
   margin: 10px;
   font-size: 14px;
   margin-top: 20px;
@@ -40,6 +45,7 @@
   color: orange;
 }
 
+/* Container for header navigation buttons, aligned to the right */
 .mainBtn {
   justify-content: flex-end;
   display: flex;
@@ -48,10 +54,11 @@
   margin-top: 14px;
 }
 
+/* Generic button style for header icons or actions */
 .Btn {
-  border:none;
+  border: none;
   background-color: inherit;
-  padding:15px;
+  padding: 15px;
   cursor: pointer;
 }
 
