@@ -1,4 +1,4 @@
-import { FaStar } from 'react-icons/fa'; // Import star icon from react-icons
+import { FaStar } from 'react-icons/fa'; 
 
 // Component to display a 5-star rating system
 function RatingStars({ rating }) {

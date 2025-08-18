@@ -214,7 +214,8 @@
 
 /* Hover effect for add button */
 .addBtn:hover {
-  background-color: #ddd;
+  background-color: orange;
+  color: white;
 }
 
 /* Cancel button (small, faded) */

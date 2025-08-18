@@ -19,11 +19,22 @@ const ClothingGrid = ({ addToCart, cartItems, removeFromCart }) => {
   // Fetch men's and women's clothing from the API on component mount
   useEffect(() => {
     Promise.all([
-      axios.get("https://fakestoreapi.com/products/category/men's clothing"),
-      axios.get("https://fakestoreapi.com/products/category/women's clothing"),
+      
+      axios.get("https://dummyjson.com/products/category/mens-shirts"),
+      axios.get("https://dummyjson.com/products/category/womens-dresses"),
+
+      // Change the API => the images didn't appear
+
+      // axios.get("https://fakestoreapi.com/products/category/men's clothing"),
+      // axios.get("https://fakestoreapi.com/products/category/women's clothing"),
+
+
     ]).then(([menRes, womenRes]) => {
+
+      // console.log(menRes);
+
       // Merge both product lists into one
-      setProducts([...menRes.data, ...womenRes.data]);
+      setProducts([...menRes.data.products, ...womenRes.data.products]);
     });
   }, []);
 
@@ -50,6 +61,7 @@ const ClothingGrid = ({ addToCart, cartItems, removeFromCart }) => {
         <ClothingCard
           key={product.id}
           product={product}
+          image = {product.image}
           isFavorite={!!favorites[product.id]}
           toggleFavorite={toggleFavorite}
           onSelect={() => setSelectedProduct(product)}
@@ -84,6 +96,7 @@ const ClothingGrid = ({ addToCart, cartItems, removeFromCart }) => {
         cartCount={cartItems.length}
         favoritesCount={favoritesCount}
       />
+      
     </div>
   );
 };

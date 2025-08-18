@@ -1,6 +1,9 @@
-import '../Styles/cartModal.css'; // Styles for the cart modal
-import Truck from '../../Pictures/Union.png'; // Truck icon
-import Privacy from '../../Pictures/Union (1).png'; // Privacy/return policy icon
+import '../Styles/cartModal.css'; 
+
+import Truck from '../../Pictures/Union.png';
+import Privacy from '../../Pictures/Union (1).png'; 
+
+import RatingStars from './RatingStars'; // Rating Component
 
 // Cart modal component for showing cart details, delivery info, and order summary
 const CartModal = ({ isOpen, onClose, children, cartItems }) => {
@@ -35,13 +38,17 @@ const CartModal = ({ isOpen, onClose, children, cartItems }) => {
                 <p style={{ opacity: 0.5 }}>Your cart is empty.</p>
               ) : (
                 // Map through cart items and display them
-                safeCartItems.map((item, index) => (
+                safeCartItems.map((item, index) => { 
+
+                   console.log(item); // check the item's object 
+
+                  return(
                   <div 
                     key={index} 
                     style={{ display: 'flex', alignItems: 'center', marginTop: '10px', gap: '10px' }}
                   >
                     {/* Product image with quantity badge */}
-                    <div style={{ position: 'relative', width: '60px', height: '60px', marginRight: '10px', marginTop: '20px' }}>
+                    <div style={{ position: 'relative', width: '70px', height: '70px', marginRight: '10px', marginTop: '20px' }}>
                       <img
                         src={item.image}
                         alt={item.name}
@@ -64,28 +71,33 @@ const CartModal = ({ isOpen, onClose, children, cartItems }) => {
                     </div>
 
                     {/* Product details */}
-                    <div>
-                      <p style={{ marginTop: '10px', marginRight: '70px', fontSize: '14px' }}>
-                        {item.name}
-                      </p>
-                      <p style={{
-                        display: 'grid',
-                        alignItems: 'end',
-                        justifyContent: 'flex-end',
-                        opacity: 0.8
-                      }}>
-                        {Math.round(item.price * item.count)}$
-                      </p>
-                      {item.size && (
-                        <p style={{ display: 'flex', fontSize: '12px', opacity: 0.6 }}>
-                          Size: {item.size}
-                        </p>
-                      )}
-                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', marginTop: '10px' }}>
+                  {/* Product Name */}
+                  <p style={{ fontSize: '14px', fontWeight: 'bold' }}>{item.name}</p>
+
+                  {/* Price */}
+                  <p style={{ fontSize: '13px', opacity: 0.8 }}>
+                    {Math.round(item.price * item.count)}$
+                  </p>
+
+                  {/* Size (optional) */}
+                  {item.size && (
+                    <p style={{ fontSize: '12px', opacity: 0.6 }}>
+                      Size: {item.size}
+                    </p>
+                  )}
+
+                  {/* Rating under details */}
+                  <RatingStars rating={item.rating} />
+                </div>
+
+
                   </div>
-                ))
+                )})
               )}
             </div>
+
+
 
             {/* Delivery Information */}
             <div className="deliverInfo">
@@ -101,6 +113,8 @@ const CartModal = ({ isOpen, onClose, children, cartItems }) => {
               <p className='deliParag'>United States</p>
             </div>
           </div>
+
+
 
           {/* Order Summary */}
           <div className="orderSum">
@@ -134,6 +148,7 @@ const CartModal = ({ isOpen, onClose, children, cartItems }) => {
                 <p>Return Policy</p>
               </div>
               <p className='underWrite'>With-in 5day's of product delivery</p>
+              
             </div>
           </div>
         </div>

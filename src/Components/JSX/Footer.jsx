@@ -1,11 +1,8 @@
-// Importing the outlined heart icon from react-icons
+import '../Styles/footer.css';
+
 import { FaRegHeart } from 'react-icons/fa';
 
-// Importing shopping cart image asset
 import ShoppingCart from '../../Pictures/shopping-bag.png';
-
-// Importing styles for the footer status bar
-import '../Styles/footer.css';
 
 // FooterStatus component displays cart and wishlist counts
 const FooterStatus = ({ cartCount, favoritesCount }) => {

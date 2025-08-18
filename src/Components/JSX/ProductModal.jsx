@@ -1,7 +1,10 @@
 import { useState } from 'react';
-import { FaShoppingCart } from 'react-icons/fa'; // Shopping cart icon
-import RatingStars from './RatingStars'; // Star rating component
-import '../Styles/BuyModal.css'; // Styling for the modal
+
+import { FaShoppingCart } from 'react-icons/fa';
+
+import RatingStars from './RatingStars'; // Rating Component
+
+import '../Styles/BuyModal.css';
 
 // Product modal component for buying a product
 function ProductModal({ product, onClose, addToCart }) {
@@ -42,8 +45,8 @@ function ProductModal({ product, onClose, addToCart }) {
     const itemToAdd = {
       id: product.id,
       name: product.title,
-      image: product.image,
-      rating: product.rating?.rate || 0,
+      image: product.thumbnail,
+      rating: product.rating || 0,
       size: selectedSize,
       count,
       price: product.price,
@@ -64,13 +67,13 @@ function ProductModal({ product, onClose, addToCart }) {
 
         {/* Product details section */}
         <div className="buyProductInfo">
-          <img src={product.image} alt="clothesImg" className="buyImg" />
+          <img src={product.thumbnail} alt="clothesImg" className="buyImg" />
           <div className="titleAndPrice">
             <p className="buyTitle">{product.title}</p>
             <p className="buyPrice">{Math.round(product.price)}$</p>
           </div>
           <p className="buyDetail">Organic Cotton, Fair Trade quality</p>
-          <RatingStars rating={product.rating?.rate} />
+          <RatingStars rating={product.rating} />
         </div>
 
         {/* Quantity selector */}

@@ -11,16 +11,13 @@ import CartModal from './Components/JSX/CartModal';
 
 function App() {
 
-  // Removes a product from the cart by filtering it out based on product ID
-  const handleRemoveFromCart = (productId) => {
-    setCartItems(prevItems => prevItems.filter(item => item.id !== productId));
-  };
+  
 
   // State for items currently in the cart
   const [cartItems, setCartItems] = useState([]);
 
   // State for the currently selected product (used for showing the product modal)
-  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [selectedProduct, setSelectedProduct] = useState(false);
 
   // State for controlling whether the cart modal is open
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -46,6 +43,12 @@ function App() {
     });
     setSelectedProduct(null); // Close product modal after adding
   };
+
+    // Removes a product from the cart by filtering it out based on product ID
+    const handleRemoveFromCart = (productId) => {
+    setCartItems(prevItems => prevItems.filter(item => item.id !== productId));
+    };
+
 
   return (
     <div className="App">
